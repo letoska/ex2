@@ -25,9 +25,12 @@ def get_shop_list_by_dishes(dishes, person_count):
                 i_n = list(indigrients.values())[0]
                 q = (int(list(indigrients.values())[1]) * person_count)
                 m = list(indigrients.values())[2]
-                order[i_n] = {'measure':q, 'quantity' :m}
+                if dishes[0] == dishes[1]:
+                  order[i_n] = {'measure':q*2, 'quantity' :m}
+                else:
+                  order[i_n] = {'measure':q, 'quantity' :m}
     print(order)
-get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
+get_shop_list_by_dishes(['Омлет', 'Омлет'], 2)
 
 
 
